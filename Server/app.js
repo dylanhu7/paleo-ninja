@@ -8,6 +8,10 @@ var indexRouter = require("./routes");
 
 var app = express();
 
+// set up our templating engine
+app.set("view engine", "jade");
+//app.engine('html', require('hbs').__express);
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
