@@ -11,56 +11,53 @@ router.get("/", (req, res) => {
   res.render("index");
 });
 
-router.post("/api/test", (req, res) => {
-  console.log(req.body);
+router.post("/dino-match", (req, res) => {
   var wins = 0;
   var dino = "";
   var eating_habits = "";
   var playerStatus = 404;
   var pro = req.body.username;
+  var resText = "";
   axios.get(FORTNITE_API_URL + pro).then(newName => {
-    console.log(newName.data);
-    console.log(newName.data.data.stats.all.overall.wins);
     wins = newName.data.data.stats.all.overall.wins;
     pro = newName.data.data.account.name;
     playerStatus = newName.status;
   });
   setTimeout(function() {
-    console.log(playerStatus);
     if (playerStatus === 200) {
       axios
         .get(DINO_API_URL + wins + "&show=class,ecospace,ttaph,etbasis,attr")
         .then(newerDino => {
-          console.log(wins);
+          console.log(newerDino.data);
           dino = newerDino.data.records[0].nam;
           eating_habits = newerDino.data.records[0].jdt;
           if (eating_habits === undefined) {
-            res.send(
+            resText =
               pro +
-                " has won " +
-                wins +
-                " games! They win so much, you could call them a " +
-                dino +
-                "! We don't know that dinosaur's eating habits!"
-            );
+              " has won " +
+              wins +
+              " games! They win so much, you could call them a " +
+              dino +
+              "! We don't know that dinosaur's eating habits!";
           } else {
-            res.send(
+            resText =
               pro +
-                " has won " +
-                wins +
-                " games! They win so much, you could call them a " +
-                dino +
-                "! A real " +
-                eating_habits +
-                "!"
-            );
+              " has won " +
+              wins +
+              " games! They win so much, you could call them a " +
+              dino +
+              "! A real " +
+              eating_habits +
+              "!";
           }
         });
     } else {
-      res.send(
-        "That player isn't in our records! They could be an invisible dinosaur!"
-      );
+      resText =
+        "That player isn't in our records! They could be an invisible dinosaur!";
     }
+    setTimeout(function() {
+      res.render("dino-match", { dino_result: resText });
+    }, 500);
   }, 2000);
 });
 

@@ -5,9 +5,10 @@ html
     link(rel="stylesheet",type="text/css",href="/css/index.css")
   body
     .paleo-ninja
-      span.paleo Paleo-
-      span.ninja Ninja
+      span#paleo Paleo
+      span#dash -
+      span#ninja Ninja
     .form
-      form.username-form(action='http://127.0.0.1:8080/api/test' method='post')
+      form.username-form(action='http://127.0.0.1:3000/dino-match' method='post')
         input.username-input(name='username' type='text' placeholder='Enter your Fortnite username...')
         input#go-button(type='submit' value='Find my Dino!')

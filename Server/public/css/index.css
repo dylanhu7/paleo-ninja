@@ -13,15 +13,20 @@
 html {
   background-color: #222222;
 }
-.paleo {
+#paleo {
   font-family: JurassicPark;
   font-size: 200px;
+  color: firebrick;
+}
+#dash {
+  font-family: JurassicPark;
+  font-size: 180px;
   color: white;
 }
-.ninja {
+#ninja {
   font-family: FortniteFontTHICC;
   font-size: 140px;
-  color: white;
+  color: #fff130;
 }
 .paleo-ninja {
   text-align: center;
