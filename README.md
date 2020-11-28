@@ -1,4 +1,4 @@
-# paleo-ninja
+# Paleo-Ninja
 
 Are you a Fortnite Professional? An up and coming talent in the Fortnite scene? Or just a casual player?
 
