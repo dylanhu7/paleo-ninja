@@ -79,13 +79,11 @@ function getDinoMatch(pro) {
 
 router.post("/dino-match", (req, res) => {
   var pro = req.body.username;
-  var initial = req.body.initial
   getDinoMatch(pro)
 
   setTimeout(function() {
     pool.getConnection(function (err, connection) {
     if (err) throw err;
-    if (initial) {
       connection.query({
               sql: 'INSERT INTO `pro-dino` (pro, resText) VALUES(?, ?)',
               values: [pro, currentResText],
@@ -97,7 +95,22 @@ router.post("/dino-match", (req, res) => {
               }
           }
       )
-    } else {
+    } 
+    );
+
+    setTimeout(function() {
+       res.render("dino-match", { dino_result: currentResText });
+    }, 500);
+  }, 8000);
+});
+
+router.post("/dino-match-update", (req, res) => {
+  var pro = req.body.username;
+  getDinoMatch(pro)
+
+  setTimeout(function() {
+    pool.getConnection(function (err, connection) {
+    if (err) throw err;
       connection.query({
               sql: 'DELETE FROM `pro-dino` ORDER BY id DESC LIMIT 1'
           }, function (err, result) {
@@ -119,16 +132,15 @@ router.post("/dino-match", (req, res) => {
             }
         }
     );
-    }
   })
 
-    setTimeout(function() {
-       res.render("dino-match", { dino_result: currentResText });
-    }, 500);
+  setTimeout(function() {
+    res.render("dino-match", { dino_result: currentResText });
+  }, 500);
   }, 8000);
 });
 
-function getPaleoNinjas() {
+router.get("/dino-match", (req, res) => {
   pool.getConnection(function (err, connection) {
     if (err) throw err;
       limit = 5;
@@ -141,15 +153,15 @@ function getPaleoNinjas() {
                   res.send('An error has occurred')
                   return
               }
-              textArr = [];
+              finalText = "";
               for (x in result) {
-                textArr.push(x['resText'])
+                textArr += x['resText'] + '\n'
               }
-              return textArr;
+              res.render('index', {randomEntries: finalText});
           }
       )
   });
-}
+});
 
 
 

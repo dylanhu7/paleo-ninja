@@ -1,3 +1,19 @@
+.username-input {
+  border: 2px solid;
+  border-color: gray;
+  border-radius: 4px;
+  padding-top: 6px;
+  padding-left: 10px;
+  transition: border-color 0.5s;
+  height: 40px;
+  width: 400px;
+  font-size: 24px;
+  font-family: FortniteFont;
+}
+.username-input:focus {
+  outline: none;
+  border-color: firebrick;
+}
 .result {
   color: white;
   font-family: FortniteFont;
@@ -5,4 +21,29 @@
   padding-left: 25%;
   padding-right: 25%;
   text-align: justify;
+}
+#go-button {
+  background-color: firebrick;
+  border-radius: 4px;
+  border-color: gray;
+  cursor: pointer;
+  height: 50px;
+  width: 120px;
+  font-size: 32px;
+  transition: border-color 0.5s;
+  border-style: solid;
+  font-family: JurassicPark;
+  margin-left: 4px;
+  color: white;
+}
+
+#go-button:hover {
+  border-color: white;
+}
+#go-button:onclick {
+  background-color: blue;
+}
+
+.form {
+  text-align: center;
 }
