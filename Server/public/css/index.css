@@ -14,6 +14,14 @@
   outline: none;
   border-color: firebrick;
 }
+.result {
+  color: white;
+  font-family: FortniteFont;
+  font-size: 40px;
+  padding-left: 25%;
+  padding-right: 25%;
+  text-align: justify;
+}
 #go-button {
   background-color: firebrick;
   border-radius: 4px;

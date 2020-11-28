@@ -11,3 +11,7 @@ html
       span#dash -
       span#ninja Ninja
     p.result= dino_result
+    .form
+      form.username-form(action='http://127.0.0.1:3000/dino-match-update' method='post')
+        input.username-input(name='username' type='text' placeholder='Enter another Fortnite username...')
+        input#go-button(type='submit' value='Find my Dino!')
