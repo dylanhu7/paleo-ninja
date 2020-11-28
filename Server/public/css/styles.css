@@ -1,0 +1,35 @@
+@font-face {
+  font-family: JurassicPark;
+  src: url("../fonts/Jurassic Park.ttf");
+}
+@font-face {
+  font-family: FortniteFontTHICC;
+  src: url("../fonts/BurbankBigCondensed-Black.otf");
+}
+@font-face {
+  font-family: FortniteFont;
+  src: url("../fonts/BurbankBigCondensed-Bold.otf");
+}
+html {
+  background-color: #222222;
+}
+#paleo {
+  font-family: JurassicPark;
+  font-size: 200px;
+  color: white;
+  text-shadow: 2px 2px firebrick;
+}
+#dash {
+  font-family: JurassicPark;
+  font-size: 180px;
+  color: white;
+}
+#ninja {
+  font-family: FortniteFontTHICC;
+  font-size: 140px;
+  color: #fff130;
+  text-shadow: 5px 2px blue;
+}
+.paleo-ninja {
+  text-align: center;
+}
