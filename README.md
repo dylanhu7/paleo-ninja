@@ -18,7 +18,7 @@ Finally, navigate to localhost:3000 to reach the homepage of Paleo-Ninja!
 
 ## Repository structure:
 
-    `paleo-ninja - project folder
+    paleo-ninja - project folder
 
         Server - folder containing Express app
     
@@ -54,7 +54,7 @@ Finally, navigate to localhost:3000 to reach the homepage of Paleo-Ninja!
             
                 dino-match.jade - dino match page template
             
-            app.js - Express controller`
+            app.js - Express controller
   
   ## Known bugs:
   
