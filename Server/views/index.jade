@@ -15,13 +15,39 @@ html
       form.username-form(action='http://127.0.0.1:3000/dino-match' method='post')
         input.username-input(name='username' type='text' placeholder='Enter your Fortnite username...')
         input#go-button(type='submit' value='Find my Dino!')
-    p.result
-      | #{e0.pro}
-      br
-      | #{e1.pro}
-      br
-      | #{e2.pro}
-      br
-      | #{e3.pro}
-      br
-      | #{e4.pro}
+    br
+    br
+    br
+    h1#prevResults Previous Dino Matches Include...
+    table#resultsTable
+      tbody
+        tr
+          th#playerCol Player
+          th#winsCol Wins
+          th#dinoCol Dinosaur
+          th#eatCol Eating Habits
+        tr
+          td= e0.pro
+          td= e0.wins
+          td.dinoData= e0.dino
+          td.dinoData= e0.eatingHabits
+        tr
+          td= e1.pro
+          td= e1.wins
+          td.dinoData= e1.dino
+          td.dinoData= e1.eatingHabits
+        tr
+          td= e2.pro
+          td= e2.wins
+          td.dinoData= e2.dino
+          td.dinoData= e2.eatingHabits
+        tr
+          td= e3.pro
+          td= e3.wins
+          td.dinoData= e3.dino
+          td.dinoData= e3.eatingHabits
+        tr
+          td= e4.pro
+          td= e4.wins
+          td.dinoData= e4.dino
+          td.dinoData= e4.eatingHabits

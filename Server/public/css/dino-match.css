@@ -18,8 +18,9 @@
   color: white;
   font-family: FortniteFont;
   font-size: 40px;
-  padding-left: 25%;
-  padding-right: 25%;
+  width: 550px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: justify;
 }
 #go-button {
@@ -43,7 +44,6 @@
 #go-button:onclick {
   background-color: blue;
 }
-
 .form {
   text-align: center;
 }
