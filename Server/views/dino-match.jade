@@ -6,11 +6,12 @@ html
     link(rel="stylesheet",type="text/css",href="/css/styles.css")
     link(rel="icon", href="favicon.ico")
   body
-    .paleo-ninja
-      span#paleo Paleo
-      span#dash -
-      span#ninja Ninja
-    p.result= dino_result
+    a#sitename(href="http://127.0.0.1:3000")
+      .paleo-ninja(href="http://127.0.0.1:3000")
+        span#paleo Paleo
+        span#dash -
+        span#ninja Ninja
+    p.result= result_dino
     .form
       form.username-form(action='http://127.0.0.1:3000/dino-match-update' method='post')
         input.username-input(name='username' type='text' placeholder='Enter another Fortnite username...')

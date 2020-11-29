@@ -33,3 +33,18 @@ html {
 .paleo-ninja {
   text-align: center;
 }
+#sitename:link {
+  text-decoration: none;
+}
+
+#sitename:visited {
+  text-decoration: none;
+}
+
+#sitename:hover {
+  text-decoration: none;
+}
+
+#sitename:active {
+  text-decoration: none;
+}
