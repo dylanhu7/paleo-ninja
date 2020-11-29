@@ -10,8 +10,8 @@ const { SSL_OP_EPHEMERAL_RSA } = require("constants");
 
 var currentResText;
 
-router.post("/dino-match-update", (req, res) => {
-  var pro = req.body.username;
+router.post("/dino-match-update", (req, res) => { // Consumes a fortnite username and updates the last entry in the database
+  var pro = req.body.username;                    // with the new fortnite and archeological values, and renders the result
   getDinoMatch(pro);
 
   setTimeout(function() {
