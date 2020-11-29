@@ -6,11 +6,22 @@ html
     link(rel="stylesheet",type="text/css",href="/css/index.css")
     link(rel="icon", href="favicon.ico")
   body
-    .paleo-ninja
-      span#paleo Paleo
-      span#dash -
-      span#ninja Ninja
+    a#sitename(href="http://127.0.0.1:3000")
+      .paleo-ninja(href="http://127.0.0.1:3000")
+        span#paleo Paleo
+        span#dash -
+        span#ninja Ninja
     .form
       form.username-form(action='http://127.0.0.1:3000/dino-match' method='post')
         input.username-input(name='username' type='text' placeholder='Enter your Fortnite username...')
         input#go-button(type='submit' value='Find my Dino!')
+    p.result
+      | #{e0.pro}
+      br
+      | #{e1.pro}
+      br
+      | #{e2.pro}
+      br
+      | #{e3.pro}
+      br
+      | #{e4.pro}
