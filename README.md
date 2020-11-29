@@ -5,6 +5,7 @@ Are you a Fortnite Professional? An up and coming talent in the Fortnite scene? 
 Whichever category you fall into, if you have a developed interest in archaeology, paleobiology, and especially all things dino, Paleo-Ninja is the site for you!
 
 Simply provide your Fortnite username (or the Fortnite username of your choice) and, based on your stats, Paleo-Ninja will match you with a dinosaur!
+##How to Run
 
 To run the server: navigate to paleo-ninja/Server and enter into the command line:
 `yarn install`
@@ -15,8 +16,8 @@ Then start the Express server with:
 
 Finally, navigate to localhost:3000 to reach the homepage of Paleo-Ninja!
 
-Repository structure:
-
+##Repository structure:
+`
     paleo-ninja - project folder
 
         Server - folder containing Express app
@@ -54,5 +55,18 @@ Repository structure:
                 dino-match.jade - dino match page template
             
             app.js - Express controller
-        
+  `
+  
+  ##Known bugs:
+  
+  [bugs]
+  
+  ##Contributions:
+  
+  Linus Sun:
+  
+  Avi Trost:
+  
+  Dylan Hu:
     
+   
