@@ -43,7 +43,7 @@ function getDinoMatch(proName) {
   }, 2000);
 }
 
-router.post("/dino-match", (req, res) => {
+router.post("/dino-match", (req, res) => { // Consumes a fortnite username and inserts the relevant fortnite and archeological values into the database, and renders the result
   getDinoMatch(req.body.username);
 
   setTimeout(function() {
