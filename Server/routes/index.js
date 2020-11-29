@@ -13,7 +13,7 @@ const pool = mysql.createPool({
   multipleStatements: true
 });
 
-router.get("/", (req, res) => {
+router.get("/", (req, res) => { // Shows up to 5 random entries from the databse to render on the main page
   pool.getConnection(function(err, connection) {
     if (err) throw err;
     limit = 5;

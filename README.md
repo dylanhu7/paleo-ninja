@@ -54,7 +54,7 @@ Finally, navigate to localhost:3000 to reach the homepage of Paleo-Ninja! Enter 
   
 ## Known bugs:
   
--[bugs]
+-database can store duplicate entries
   
 ## Contributions:
   
