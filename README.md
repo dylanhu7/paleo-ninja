@@ -30,27 +30,25 @@ CREATE TABLE pro-dino (
 Finally, navigate to localhost:3000 to reach the homepage of Paleo-Ninja!
 
 ## Repository structure:
-```
-    **paleo-ninja** - project folder
-        Server - folder containing Express app
-            bin
-                www - server properties
-            public
-                css - contains css for pages
-                    dino-match.css - styling for dino-match page
-                    index.css - styling for homepage
-                    styles.css - styles shared by multiple pages
-                    fonts - contains fonts for pages
-                    favicon.ico - site icon
-            routes - contains Express routes (handles GET and POST requests)
-                dino-match.js - handles POST request from Fortnite username form
-                index.js - handles GET request for homepage
-            views - contains Jade templates for pages
-                index.jade - homepage template
-                error.jade - error page template
-                dino-match.jade - dino match page template
-            app.js - Express controller
-  ```
+    paleo-ninja - project folder  
+        Server - folder containing Express app  
+            bin  
+                www - server properties  
+            public  
+                css - contains css for pages  
+                    dino-match.css - styling for dino-match page  
+                    index.css - styling for homepage  
+                    styles.css - styles shared by multiple pages  
+                    fonts - contains fonts for pages  
+                    favicon.ico - site icon  
+            routes - contains Express routes (handles GET and POST requests)  
+                dino-match.js - handles POST request from Fortnite username form  
+                index.js - handles GET request for homepage  
+            views - contains Jade templates for pages  
+                index.jade - homepage template  
+                error.jade - error page template  
+                dino-match.jade - dino match page template  
+            app.js - Express controller  
   ## Known bugs:
   
   -[bugs]
