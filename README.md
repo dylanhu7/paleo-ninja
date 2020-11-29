@@ -30,7 +30,8 @@ CREATE TABLE pro-dino (
 Finally, navigate to localhost:3000 to reach the homepage of Paleo-Ninja!
 
 ## Repository structure:
-    paleo-ninja - project folder  
+
+paleo-ninja - project folder  
         Server - folder containing Express app  
             bin  
                 www - server properties  
@@ -49,19 +50,20 @@ Finally, navigate to localhost:3000 to reach the homepage of Paleo-Ninja!
                 error.jade - error page template  
                 dino-match.jade - dino match page template  
             app.js - Express controller  
-  ## Known bugs:
+
+## Known bugs:
   
-  -[bugs]
+-[bugs]
   
-  ## Contributions:
+## Contributions:
   
-  ##### Linus Sun:
-  -retrieving and processing data from fortnite-api.com and paleobiodb.org
+##### Linus Sun:
+-retrieving and processing data from fortnite-api.com and paleobiodb.org
   
-  ##### Avi Trost:
-  -implementing usage of MySQL (storing and displaying search results on the main page)
+##### Avi Trost:
+-implementing usage of MySQL (storing and displaying search results on the main page)
   
-  ##### Dylan Hu:
-  -front-end design, user interface implementation, routing and handling GET/POST requests
+##### Dylan Hu:
+-front-end design, user interface implementation, routing and handling GET/POST requests
     
    
