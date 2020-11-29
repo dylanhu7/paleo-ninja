@@ -31,7 +31,7 @@ Finally, navigate to localhost:3000 to reach the homepage of Paleo-Ninja!
 
 ## Repository structure:
 ```
-    paleo-ninja - project folder
+    **paleo-ninja** - project folder
         Server - folder containing Express app
             bin
                 www - server properties
