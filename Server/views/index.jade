@@ -14,4 +14,13 @@ html
       form.username-form(action='http://127.0.0.1:3000/dino-match' method='post')
         input.username-input(name='username' type='text' placeholder='Enter your Fortnite username...')
         input#go-button(type='submit' value='Find my Dino!')
-    p.result= randomEntries
+    p.result
+      | #{e1}
+      br
+      | #{e2}
+      br
+      | #{e3}
+      br
+      | #{e4}
+      br
+      | #{e5}

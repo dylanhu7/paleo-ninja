@@ -27,12 +27,7 @@ router.get("/", (req, res) => {
                   return
               }
               console.log("result: " + result[0]['resText'])
-              var finalText = "";
-              for (i = 0; i < result.length; i++) {
-                finalText += result[i]['resText'] + '\n'
-              }
-              console.log("finalText: " + finalText)
-              res.render('index', {randomEntries: finalText});
+              res.render('index', {e1: result[0]['resText'], e2: result[1]['resText'], e3: result[0]['resText'], e4: result[0]['resText'], e5: result[0]['resText']});
           }
       )
   });
