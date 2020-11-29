@@ -8,16 +8,21 @@ const FORTNITE_API_URL = "https://fortnite-api.com/v1/stats/br/v2/?name="; // AP
 const mysql = require("mysql");
 const { SSL_OP_EPHEMERAL_RSA } = require("constants");
 
+var currentResText;
+
 // set up our database
 const pool = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "toor",
-  database: "paleoninja",
+  host: 'localhost',
+  user: 'root',
+  password: 'toor',
+  database: 'paleoninja',
   multipleStatements: true
+})
+
+router.get("/", (req, res) => {
+  res.render("index");
 });
 
-<<<<<<< HEAD
 // gets a user's fortnite stats and matches them with a paleobiologic organism
 // takes in concatenation of fortnite API URL starter and given username,
 // makes a GET request to the fortnite API using the concatenated url
@@ -34,29 +39,10 @@ function getDinoMatch(pro) {
   });
   setTimeout(function() { // delay added to match the time it takes to access the fortnite API
     if (playerStatus === 200) { // if a successful API request has been made
-=======
-var pro;
-var wins;
-var dino;
-var eatingHabits;
-var validUser = false;
-
-function getDinoMatch(proName) {
-  var playerStatus = 404;
-  axios.get(FORTNITE_API_URL + proName).then(newName => {
-    wins = newName.data.data.stats.all.overall.wins;
-    pro = newName.data.data.account.name;
-    playerStatus = newName.status;
-  });
-  setTimeout(function() {
-    if (playerStatus === 200) {
-      validUser = true;
->>>>>>> 1fba25d78b258ea2f257710200361b68a36c5d2d
       axios
         .get(DINO_API_URL + wins + "&show=class,ecospace,ttaph,etbasis,attr") // takes the user's number of wins, gets the paleobiologic organism with that id
         // includes that organism's eating habits in retrieved data
         .then(newerDino => {
-<<<<<<< HEAD
           dino = newerDino.data.records[0].nam; // gets the name of the retrieved organism
           eating_habits = newerDino.data.records[0].jdt; // gets that organism's eating habits
           if (eating_habits === undefined) { // if eating habits not listed for organism
@@ -86,69 +72,83 @@ function getDinoMatch(proName) {
       currentResText = resText;
     }
     return resText;
-=======
-          dino = newerDino.data.records[0].nam;
-          eatingHabits = newerDino.data.records[0].jdt;
-        });
-    }
->>>>>>> 1fba25d78b258ea2f257710200361b68a36c5d2d
   }, 2000);
 }
 
-router.post("/dino-match", (req, res) => { // Consumes a fortnite username and inserts the relevant fortnite and archeological values into the database, and renders the result
-  getDinoMatch(req.body.username);
+router.post("/dino-match", (req, res) => {
+  var pro = req.body.username;
+  var initial = req.body.initial
+  getDinoMatch(pro)
 
   setTimeout(function() {
-    function addToDatabase(values) {
-      pool.getConnection(function(err, connection) {
-        if (err) throw err;
-        connection.query(
-          {
-            sql:
-              "INSERT INTO `pro-dino` (pro, wins, dino, eatingHabits) VALUES(?, ?, ?, ?)",
-            values: values
-          },
-          function(err, result) {
-            if (err) {
-              console.error(err);
-              res.send("An error has occurred");
-              return;
-            }
+    pool.getConnection(function (err, connection) {
+    if (err) throw err;
+    if (initial) {
+      connection.query({
+              sql: 'INSERT INTO `pro-dino` (pro, resText) VALUES(?, ?)',
+              values: [pro, currentResText],
+          }, function (err, result) {
+              if (err) {
+                  console.error(err)
+                  res.send('An error has occurred')
+                  return
+              }
           }
-        );
-      });
+      )
+    } else {
+      connection.query({
+              sql: 'DELETE FROM `pro-dino` ORDER BY id DESC LIMIT 1'
+          }, function (err, result) {
+              if (err) {
+                  console.error(err)
+                  res.send('An error has occurred')
+                  return
+              }
+          }
+      );
+      connection.query({
+              sql: 'INSERT INTO `pro-dino` (pro, resText) VALUES(?, ?)',
+              values: [pro, currentResText],
+          }, function (err, result) {
+             if (err) {
+              console.error(err)
+              res.send('An error has occurred')
+              return
+            }
+        }
+    );
     }
+  })
 
     setTimeout(function() {
-      var resText;
-      if (validUser) {
-        if (eatingHabits === undefined) {
-          addToDatabase([pro, wins, dino, "unknown"]);
-          resText =
-            pro +
-            " has won " +
-            wins +
-            " games! They win so much, you could call them a " +
-            dino +
-            "! We don't know that dinosaur's eating habits!";
-        } else {
-          addToDatabase([pro, wins, dino, eatingHabits]);
-          resText =
-            pro +
-            " has won " +
-            wins +
-            " games! They win so much, you could call them a " +
-            dino +
-            "! A real " +
-            eatingHabits +
-            "!";
-        }
-      } else {
-        resText = "Oops! We could not find that Fortnite player!";
-      }
-      res.render("dino-match", { result_dino: resText });
+       res.render("dino-match", { dino_result: currentResText });
     }, 500);
-  }, 2500);
+  }, 8000);
 });
+
+function getPaleoNinjas() {
+  pool.getConnection(function (err, connection) {
+    if (err) throw err;
+      limit = 5;
+      connection.query({
+              sql: 'SELECT * FROM `pro-dino` ORDER BY RAND() LIMIT ?',
+              values: [limit],
+          }, function (err, result) {
+              if (err) {
+                  console.error(err)
+                  res.send('An error has occurred')
+                  return
+              }
+              textArr = [];
+              for (x in result) {
+                textArr.push(x['resText'])
+              }
+              return textArr;
+          }
+      )
+  });
+}
+
+
 
 module.exports = router;
