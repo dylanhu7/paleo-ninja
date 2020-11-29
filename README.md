@@ -2,9 +2,9 @@
 
 Are you a Fortnite Professional? An up and coming talent in the Fortnite scene? Or just a casual player?
 
-Whichever category you fall into, if you have a developed interest in paleontology and all things dino, Paleo-Ninja is the site for you!
+Whichever category you fall into, if you have a developed interest in archaeology, paleobiology, and especially all things dino, Paleo-Ninja is the site for you!
 
-Simply provide your Fortnite username and, based on your stats, Paleo-Ninja will match you with a dinosaur!
+Simply provide your Fortnite username (or the Fortnite username of your choice) and, based on your stats, Paleo-Ninja will match you with a dinosaur!
 
 To run the server: navigate to paleo-ninja/Server and enter into the command line:
 `yarn install`
