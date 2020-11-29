@@ -63,12 +63,12 @@ Finally, navigate to localhost:3000 to reach the homepage of Paleo-Ninja!
   ## Contributions:
   
   ###### Linus Sun:
-  -
+  -retrieving and processing data from fortnite-api.com and paleobiodb.org
   
   ###### Avi Trost:
-  -
+  -implementing usage of MySQL (storing and displaying search results on the main page)
   
   ###### Dylan Hu:
-  -
+  -front-end design, user interface implementation, routing and handling GET/POST requests
     
    
