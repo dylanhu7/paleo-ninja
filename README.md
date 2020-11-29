@@ -14,6 +14,17 @@ to install all necessary dependencies.
 Then start the Express server with:
 `yarn start`
 
+To setup the MySQL server the website uses:
+`CREATE DATABASE paleoninja;
+USE paleoninja;
+CREATE TABLE pro-dino (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    pro TEXT NOT NULL,
+    wins TEXT NOT NULL,
+    dino TEXT NOT NULL,
+    eatingHabits TEXT NOT NULL
+);`
+
 Finally, navigate to localhost:3000 to reach the homepage of Paleo-Ninja!
 
 ## Repository structure:
