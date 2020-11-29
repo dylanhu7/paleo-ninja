@@ -17,42 +17,42 @@ Finally, navigate to localhost:3000 to reach the homepage of Paleo-Ninja!
 
 Repository structure:
 
-paleo-ninja - project folder
+    paleo-ninja - project folder
 
-    Server - folder containing Express app
+        Server - folder containing Express app
     
-        bin
+            bin
         
-            www - server properties
+                www - server properties
             
-        public
+            public
         
-            css - contains css for pages
+                css - contains css for pages
             
-                dino-match.css - styling for dino-match page
+                    dino-match.css - styling for dino-match page
                 
-                index.css - styling for homepage
+                    index.css - styling for homepage
                 
-                styles.css - styles shared by multiple pages
+                    styles.css - styles shared by multiple pages
                 
-                fonts - contains fonts for pages
+                    fonts - contains fonts for pages
                 
-                favicon.ico - site icon
+                    favicon.ico - site icon
                 
-        routes - contains Express routes (handles GET and POST requests)
+            routes - contains Express routes (handles GET and POST requests)
         
-            dino-match.js - handles POST request from Fortnite username form
+                dino-match.js - handles POST request from Fortnite username form
             
-            index.js - handles GET request for homepage
+                index.js - handles GET request for homepage
             
-        views - contains Jade templates for pages
+            views - contains Jade templates for pages
         
-            index.jade - homepage template
+                index.jade - homepage template
             
-            error.jade - error page template
+                error.jade - error page template
             
-            dino-match.jade - dino match page template
+                dino-match.jade - dino match page template
             
-        app.js - Express controller
+            app.js - Express controller
         
     
