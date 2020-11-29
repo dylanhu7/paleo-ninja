@@ -16,15 +16,14 @@ Then start the Express server with:
 
 To setup the MySQL server the website uses:
 ```
-\
-CREATE DATABASE paleoninja;\
-USE paleoninja;\
-CREATE TABLE pro-dino (\
-    id INTEGER PRIMARY KEY AUTO_INCREMENT,\
-    pro TEXT NOT NULL,\
-    wins TEXT NOT NULL,\
-    dino TEXT NOT NULL,\
-    eatingHabits TEXT NOT NULL\
+CREATE DATABASE paleoninja;
+USE paleoninja;
+CREATE TABLE pro-dino (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    pro TEXT NOT NULL,
+    wins TEXT NOT NULL,
+    dino TEXT NOT NULL,
+    eatingHabits TEXT NOT NULL
 );
 ```
 
