@@ -23,7 +23,7 @@ CREATE TABLE pro-dino (\
     wins TEXT NOT NULL,\
     dino TEXT NOT NULL,\
     eatingHabits TEXT NOT NULL\
-);\
+);
 
 Finally, navigate to localhost:3000 to reach the homepage of Paleo-Ninja!
 
